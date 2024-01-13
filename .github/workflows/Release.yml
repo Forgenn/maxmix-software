@@ -94,16 +94,16 @@ jobs:
         draft: false
         prerelease: true
 
-    #- name: Upload Release Assets - Installer
-      #id: upload-release-assets-installer
-      #uses: actions/upload-release-asset@v1
-      #env:
-      #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #with:
-      #  upload_url: ${{ steps.create-release.outputs.upload_url }}
-      #  asset_path: Desktop\Installer\Builds\Maxmix.msi
-      #  asset_name: Maxmix.${{env.VERSION}}.msi
-      #  asset_content_type: application/zip
+    - name: Upload Release Assets - Installer
+      id: upload-release-assets-installer
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create-release.outputs.upload_url }}
+        asset_path: Desktop\Installer\Builds\Maxmix.msi
+        asset_name: Maxmix.${{env.VERSION}}.msi
+        asset_content_type: application/zip
 
     - name: Upload Release Assets - Firmware (FullStep)
       id: upload-release-assets-firmware-fullstep
